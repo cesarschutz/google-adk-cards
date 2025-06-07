@@ -1,12 +1,12 @@
-# agent-visa-unicred-sdk
+# google-adk-cards
 
-> Um agente para operações de cartão Visa Unicred usando o Google ADK. 💳🤖
+> Um agente para operações de cartão usando o Google ADK. 💳🤖
 
 ---
 
 ## 🔍 Sobre
 
-Este projeto demonstra como **criar e executar** um Multitool Agent em Java usando o Google ADK para gerenciar operações de cartão Visa Unicred.  
+Este projeto demonstra como **criar e executar** um Multitool Agent em Java usando o Google ADK para gerenciar operações de cartão Visa.  
 Funcionalidades principais:
 - Consultar informações do cartão (saldos, limites)
 - Bloquear e desbloquear cartão
@@ -21,7 +21,6 @@ Funcionalidades principais:
 - **Java 11+**
 - **Maven 3.6+**
 - **API Key do Google** (para Google ADK)
-- **Endpoints da Unicred** (Swagger ou documentação da API)
 
 ### Configuração de ambiente
 
@@ -36,8 +35,8 @@ export GOOGLE_API_KEY="PASTE_YOUR_ACTUAL_API_KEY_HERE"
 
 1. **Clone o repositório**
    ```bash
-   git clone https://github.com/seu-usuario/agent-visa-unicred-sdk.git
-   cd agent-visa-unicred-sdk
+   git clone https://github.com/cesarschutz/google-adk-cards.git
+   cd google-adk-cards
    ```
 2. **Compile e execute**
    ```bash
@@ -55,12 +54,12 @@ export GOOGLE_API_KEY="PASTE_YOUR_ACTUAL_API_KEY_HERE"
 ## 📂 Estrutura do Projeto
 
 ```
-agent-visa-unicred-sdk/
+google-adk-cards/
 │
 ├── src/
 │   └── main/
 │       ├── java/         # Códigos-fonte dos agentes
-│       └── resources/    # Configs e assets (ex.: Swagger da Unicred)
+│       └── resources/    # Configs e assets
 │
 ├── pom.xml               # Build e dependências Maven
 └── README.md             # Este arquivo
