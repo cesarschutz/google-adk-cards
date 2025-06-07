@@ -1,6 +1,6 @@
-package agents.cards.visa.agents.root;
+package com.example.adk.cards.root;
 
-import agents.cards.visa.agents.card.CardAgent;
+import com.example.adk.cards.card.CardAgent;
 import com.google.adk.agents.BaseAgent;
 import com.google.adk.agents.LlmAgent;
 import com.google.adk.events.Event;
