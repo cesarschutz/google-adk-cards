@@ -1,4 +1,4 @@
-package agents.cards.visa.application;
+package agents.cards.visa.agents.root;
 
 import agents.cards.visa.agents.card.CardAgent;
 import com.google.adk.agents.BaseAgent;
@@ -23,14 +23,29 @@ public class RootAgent {
 
     public static BaseAgent initAgent() {
         return LlmAgent.builder()
-                .name("cards_team")
+                .name("financial_services_orchestrator")
                 .model("gemini-2.0-flash")
-                .description("Orquestra agentes internos para gerenciamento de cartões")
+                .description("Orquestrador principal para serviços financeiros: cartões e faturas.")
                 .instruction("""
-                          Você é um orquestrador de agentes.
-                          Sempre responde em formato markdown e ao identificar JSON formate blocos de JSON com code fences.
+                            Você é um orquestrador inteligente para serviços financeiros:
+                            1. Mecanismo de delegação: roteie operações de cartão para o CardAgent.
+                            2. **Formato uniforme de resposta**: todas as tools devem retornar o envelope JSON abaixo:
+                               ```json
+                               {
+                                 "status": <código>,
+                                 "body": { … },
+                                 "message": "<mensagem>"
+                               }
+                               ```
+                            3. Sempre formate o resultado em markdown com bloco ```json```.
+                            4. Armazene em contexto o último `uuid` do cartão usado e, se o usuário disser “este cartão”, reutilize-o.
+                            5. Para operações críticas, confirme detalhes antes de executar.
+                            6. Seja proativo em sugerir próximos passos (ex: “Consultar fatura?”, “Desbloquear?”).
+                            7. Se algo estiver ambíguo ou faltar parâmetros, pergunte para esclarecer.
                         """)
-                .subAgents(Arrays.asList(CardAgent.createAgent()))
+                .subAgents(Arrays.asList(
+                        CardAgent.createAgent()
+                ))
                 .build();
     }
 

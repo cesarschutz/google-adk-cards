@@ -11,10 +11,6 @@ public class CancelCardDto {
         return uuid;
     }
 
-    @Annotations.Schema(
-            name = "uuid",
-            description = "UUID do cartão que será cancelado"
-    )
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
