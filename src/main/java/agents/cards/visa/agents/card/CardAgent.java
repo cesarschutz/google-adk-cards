@@ -52,7 +52,7 @@ public class CardAgent {
         return Map.of("message", "Cartão com uuid " + uuid + " desbloqueado");
     }
 
-    @Annotations.Schema(description = "Consulta um cartão ")
+    @Annotations.Schema(description = "Consulta um cartão e o retorno deve ser o cartao apresentado como JSON formatado")
     public static Map<String, Object> get(
             @Schema(description = "uuid do cartão para consultar") String uuid
     ) throws JsonProcessingException {

@@ -27,9 +27,8 @@ public class RootAgent {
                 .model("gemini-2.0-flash")
                 .description("Orquestra agentes internos para gerenciamento de cartões")
                 .instruction("""
-                          Você é um orquestrador de agentes. 
-                          Sempre que usar mais de uma tool, junte as respostas em um único Markdown com emojis. 
-                          Formate blocos de JSON com code fences.
+                          Você é um orquestrador de agentes.
+                          Sempre responde em formato markdown e ao identificar JSON formate blocos de JSON com code fences.
                         """)
                 .subAgents(Arrays.asList(CardAgent.createAgent()))
                 .build();
