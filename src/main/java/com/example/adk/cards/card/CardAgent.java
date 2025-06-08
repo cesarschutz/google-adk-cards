@@ -44,30 +44,46 @@ public class CardAgent {
     }
 
     @Annotations.Schema(description = "Bloqueia um cartão")
-    public static ApiResponse<String> block(
+    public static java.util.Map<String, Object> block(
             @Annotations.Schema(description = "UUID do cartão") String uuid
     ) {
-        return SERVICE.block(uuid);
+        ApiResponse<String> response = SERVICE.block(uuid);
+        return java.util.Map.of(
+                "status", response.getStatus(),
+                "body", response.getBody(),
+                "message", response.getMessage());
     }
 
     @Annotations.Schema(description = "Desbloqueia um cartão")
-    public static ApiResponse<String> unblock(
+    public static java.util.Map<String, Object> unblock(
             @Annotations.Schema(description = "UUID do cartão") String uuid
     ) {
-        return SERVICE.unblock(uuid);
+        ApiResponse<String> response = SERVICE.unblock(uuid);
+        return java.util.Map.of(
+                "status", response.getStatus(),
+                "body", response.getBody(),
+                "message", response.getMessage());
     }
 
     @Annotations.Schema(description = "Consulta dados de um cartão")
-    public static ApiResponse<CardDto> get(
+    public static java.util.Map<String, Object> get(
             @Annotations.Schema(description = "UUID do cartão") String uuid
     ) {
-        return SERVICE.get(uuid);
+        ApiResponse<CardDto> response = SERVICE.get(uuid);
+        return java.util.Map.of(
+                "status", response.getStatus(),
+                "body", response.getBody(),
+                "message", response.getMessage());
     }
 
     @Annotations.Schema(description = "Cancela um cartão")
-    public static ApiResponse<String> cancel(
+    public static java.util.Map<String, Object> cancel(
             @Annotations.Schema(description = "Payload para cancelar cartão") CancelCardDto dto
     ) {
-        return SERVICE.cancel(dto);
+        ApiResponse<String> response = SERVICE.cancel(dto);
+        return java.util.Map.of(
+                "status", response.getStatus(),
+                "body", response.getBody(),
+                "message", response.getMessage());
     }
 }
