@@ -40,8 +40,8 @@ export GOOGLE_API_KEY="PASTE_YOUR_ACTUAL_API_KEY_HERE"
    ```
 2. **Compile e execute**
    ```bash
-   mvn clean install
-   mvn exec:java      -Dexec.mainClass="com.google.adk.web.AdkWebServer"      -Dexec.args="--adk.agents.source-dir=src/main/java"      -Dexec.classpathScope="compile"
+   mvn clean package
+   mvn exec:java
    ```
 3. **Acesse a GUI**  
    Abra no navegador:
@@ -58,7 +58,8 @@ google-adk-cards/
 │
 ├── src/
 │   └── main/
-│       ├── java/         # Códigos-fonte dos agentes
+│       ├── java/
+│       │   └── com/example/adk/cards  # Pacotes de agentes e modelos
 │       └── resources/    # Configs e assets
 │
 ├── pom.xml               # Build e dependências Maven

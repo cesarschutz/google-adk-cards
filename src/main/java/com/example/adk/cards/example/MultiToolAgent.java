@@ -1,4 +1,4 @@
-package agents.cards.visa.example;
+package com.example.adk.cards.example;
 
 public class MultiToolAgent {
 
