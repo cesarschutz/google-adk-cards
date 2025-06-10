@@ -1,6 +1,6 @@
 package com.example.ai.service;
 
-import org.springframework.ai.chat.ChatClient;
+import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.stereotype.Service;
 
 import com.example.ai.tools.CardTools;
