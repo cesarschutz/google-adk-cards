@@ -1,99 +1,21 @@
-# google-adk-cards
+# Spring AI Multi-Agent Example
 
-> Um agente para operações de cartão usando o Google ADK. 💳🤖
+Este projeto demonstra uma aplicação simples utilizando **Spring AI** com três agentes:
 
----
+1. **CardAgent** – ferramentas para operações de cartão (bloqueio, desbloqueio e consulta de limite).
+2. **InvoiceAgent** – ferramentas para operações de faturas (detalhes e pagamento).
+3. **RouterAgent** – recebe as mensagens do usuário e utiliza o modelo para escolher a melhor ferramenta para responder.
 
-## 🔍 Sobre
+Execute o endpoint `/chat` enviando um texto para conversar com a IA. O modelo escolherá entre as ferramentas disponíveis para responder.
 
-Este projeto demonstra como **criar e executar** um Multitool Agent em Java usando o Google ADK para gerenciar operações de cartão Visa.  
-Funcionalidades principais:
-- Consultar informações do cartão (saldos, limites)
-- Bloquear e desbloquear cartão
-- Consultar fatura e transações
+## Requisitos
 
----
+- Java 21
+- Maven
+- Definir a variável `OPENAI_API_KEY` com sua chave da API OpenAI.
 
-## 🚀 Quickstart
-
-### Pré-requisitos
-
-- **Java 11+**
-- **Maven 3.6+**
-- **API Key do Google** (para Google ADK)
-
-### Configuração de ambiente
-
-Defina as variáveis antes de rodar:
+Para executar os testes:
 
 ```bash
-export GOOGLE_GENAI_USE_VERTEXAI=FALSE
-export GOOGLE_API_KEY="PASTE_YOUR_ACTUAL_API_KEY_HERE"
+mvn test
 ```
-
-### Passo a passo
-
-1. **Clone o repositório**
-   ```bash
-   git clone https://github.com/cesarschutz/google-adk-cards.git
-   cd google-adk-cards
-   ```
-2. **Compile e execute**
-   ```bash
-   mvn clean install
-   mvn exec:java      -Dexec.mainClass="com.google.adk.web.AdkWebServer"      -Dexec.args="--adk.agents.source-dir=src/main/java"      -Dexec.classpathScope="compile"
-   ```
-3. **Acesse a GUI**  
-   Abra no navegador:
-   ```text
-   http://localhost:8080
-   ```
-
----
-
-## 📂 Estrutura do Projeto
-
-```
-google-adk-cards/
-│
-├── src/
-│   └── main/
-│       ├── java/         # Códigos-fonte dos agentes
-│       └── resources/    # Configs e assets
-│
-├── pom.xml               # Build e dependências Maven
-└── README.md             # Este arquivo
-```
-
----
-
-## 🛠️ Plano de Ação (TODO)
-
-- [ ] Criar consulta de cartão, bloqueio e desbloqueio
-- [ ] Criar chamadas de endpoint
-- [ ] Criar integração com frontend
-- [ ] Utilizar IA local
-- [ ] Criar gerador de código, que gere um agent a partir de um swager.json
-
-> **Pergunta provocadora:** e se integrássemos notificações automáticas de bloqueio via Slack ou Telegram? 🚀
-
----
-
-## 🤝 Como Contribuir
-
-1. Fork este repositório
-2. Crie uma branch:
-   ```bash
-   git checkout -b feature/nova-funcionalidade
-   ```
-3. Commit das mudanças:
-   ```bash
-   git commit -m "Descrição da feature"
-   ```
-4. Abra um Pull Request
-
----
-
-## 📄 Licença
-
-MIT © 2025 — Inove, compartilhe e ajude a comunidade!  
